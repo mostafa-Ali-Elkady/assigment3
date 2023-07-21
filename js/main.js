@@ -40,7 +40,7 @@ function addSite() {
     Swal.fire({
       title:
         "<h3>Site Name or Url is not valid, Please follow the rules below :</h3>",
-      html: "<p>--Site name must contain at least 3 characters</p> <p>--Site URL must be a valid one</p>",
+      html: "<p>--Site name must contain at least 3 characters</p> <p>--Site URL must Starts with http:// or https://</p>",
       confirmButtonText: "OK",
     });
   }
@@ -64,7 +64,7 @@ function nameRegex() {
 }
 function urlRegex() {
   const regex =
-    /^(https?:\/\/)?([a-z0-9-]+\.)*[a-z0-9-]+(\.[a-z]{2,})(:\d{1,5})?(\/[^\s]*)?$/i;
+    /^(https?:\/\/)([a-z0-9-]+\.)*[a-z0-9-]+(\.[a-z]{2,})(:\d{1,5})?(\/[^\s]*)?$/i;
   return regex.test(siteUrl.value);
 }
 ////////////////////////////////////////////////////////////////////
