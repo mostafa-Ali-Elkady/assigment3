@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>assigment3</title>
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/sweetalert2.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="bookmark mt-5">
+      <div class="container">
+        <h1 class="text-center">BookMarker</h1>
+        <div class="bookmark-body">
+          <h2>
+            <i class="icon-bookmark"></i>Bookmark your favorite sites<i
+              class="icon-bookmark"
+            ></i>
+          </h2>
+          <div class="inputs">
+            <div class="valid-feedback">Looks good!</div>
+            <label for="siteName" class="fw-bold text-capitalize fs-6 mb-2"
+              ><i class="icon-sitename me-2"></i>site Name</label
+            >
+            <input
+              type="text"
+              id="siteName"
+              placeholder="Bookmark Name"
+              class="form-control mb-4"
+            />
+            <label for="siteUrl" class="fw-bold text-capitalize fs-6 mb-2"
+              ><i class="icon-siteurl me-2"></i>site Url</label
+            >
+            <input
+              type="text"
+              id="siteUrl"
+              placeholder="Website Url"
+              class="form-control"
+            />
+          </div>
+          <button class="btn d-block mx-auto mt-5 px-5" id="submit-btn">
+            submit
+          </button>
+        </div>
+        <div class="bookmark-table mt-4">
+          <table class="table table-striped">
+            <thead>
+              <th>Index</th>
+              <th>Website Name</th>
+              <th class="ps-4">Visit</th>
+              <th class="ps-4">Delete</th>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/sweetalert2.all.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>

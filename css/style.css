@@ -1,0 +1,55 @@
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap");
+body {
+  font-family: "PT Sans Caption", sans-serif;
+  background-color: #e3f2fd;
+}
+h1 {
+  font-family: "Pacifico", cursive;
+  font-size: 2.7rem;
+  margin-bottom: 3rem;
+  position: relative;
+  width: fit-content;
+  margin-inline: auto;
+}
+h1::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 25%;
+  left: 0;
+  bottom: 0;
+  background-color: #f2542d;
+  transition: 0.4s;
+  z-index: -1;
+}
+h1:hover::before {
+  height: 60%;
+}
+.bookmark-body {
+  padding-block: 1rem;
+  border-width: 2px 0px;
+  border-style: dotted;
+  border-color: #352e28;
+}
+.bookmark-body h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-family: "Righteous", cursive;
+  text-align: center;
+  background: -webkit-linear-gradient(#127475, #0e9594);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+::selection {
+  background-color: #f2542d;
+}
+.btn,
+.btn:hover {
+  background-color: #f2542d;
+  color: #fff;
+  font-size: 1rem;
+}
+.btn.btn-danger,
+.btn.btn-danger:hover {
+  background-color: red;
+}
