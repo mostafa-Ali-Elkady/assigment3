@@ -6,23 +6,22 @@ let visitBtn = document.getElementById("visitBtn");
 let deleteBtn = document.getElementById("deleteBtn");
 let modalOne = document.getElementById("modalOne");
 ////////////////////////////////////////////////////////////////////
-submitBtn.addEventListener("click", function () {
-  addSite();
-});
-
 let sitesList;
 if (localStorage.site != null) {
   sitesList = JSON.parse(localStorage.site);
 } else {
   sitesList = [];
 }
-////////////////////////////////////////////////////////////////////
+submitBtn.addEventListener("click", function () {
+  addSite();
+});
 
+////////////////////////////////////////////////////////////////////
 function addSite() {
   if (nameRegex() && urlRegex()) {
     if (isSiteInList(siteName.value, siteUrl.value)) {
       Swal.fire({
-        title: "<i>Error</i>",
+        title: "<i>Warning</i>",
         html: "this site has been added before",
         confirmButtonText: "OK",
       });
@@ -102,9 +101,23 @@ function clearInputs() {
 }
 // delete Bookmark
 function deleteSite(i) {
-  sitesList.splice(i, 1);
-  localStorage.setItem("site", JSON.stringify(sitesList));
-  displaySite();
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You will not be able to recover this item!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#d33",
+    cancelButtonColor: "#3085d6",
+    confirmButtonText: "Yes, delete it!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Handle delete action here
+      sitesList.splice(i, 1);
+      localStorage.setItem("site", JSON.stringify(sitesList));
+      displaySite();
+      Swal.fire("Deleted!", "Your item has been deleted.", "success");
+    }
+  });
 }
 ////////////////////////////////////////////////////////////////////
 // capitalize Function
